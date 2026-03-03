@@ -1,6 +1,6 @@
 # Conteo de Palabras – Ejecución Secuencial vs Paralela
 
-## Máster en Big Data  
+## Máster en Big Data
 Asignatura: Computación Concurrente y Distribuida  
 Autor: Gianfranco Tomaino  
 Curso: 2025–2026  
@@ -10,12 +10,10 @@ Curso: 2025–2026
 ## 1. Descripción del proyecto
 
 Este proyecto implementa un sistema de conteo de palabras sobre un corpus textual de gran tamaño utilizando dos enfoques:
-
 - Ejecución secuencial
 - Ejecución paralela mediante `multiprocessing` en Python
 
 Además, se incorpora MongoDB como mecanismo de persistencia temporal para:
-
 - Registrar resultados parciales generados por cada proceso
 - Registrar métricas completas de cada ejecución experimental
 
@@ -37,26 +35,11 @@ El objetivo es analizar el impacto del paralelismo en función del tamaño del p
 
 ## 3. Estructura del proyecto
 
-contar-palabras/
-│
-├── docker-compose.yml
-├── requirements.txt
-├── README.md
-├── data/
-│ ├── el_quijote.txt
-│
-├── src/
-│ ├── contar_palabras.py
-│ ├── parallel_count.py
-│ ├── text_cleaning.py
-│ ├── mongo_store.py
-│ ├── clear_db.py
-│
-├── scripts/
-│ └── make_quijote_100x.ps1
-│
-└── reports/
-└── Informe.pdf
+contar-palabras / docker-compose.yml, requirements.txt, README.md
+data / el_quijote.txt
+src / contar_palabras.py, parallel_count.py, text_cleaning.py, mongo_store.py, clear_db.py
+scripts / make_quijote_100x.ps1
+reports / 
 
 ---
 
@@ -72,7 +55,6 @@ contar-palabras/
 
 ### 5.1 Crear entorno virtual
 
-```powershell
 py -m venv .venv
 .venv\Scripts\Activate
 pip install -r requirements.txt
@@ -82,7 +64,6 @@ pip install -r requirements.txt
 docker compose up -d
 
 MongoDB quedará accesible en:
-
 mongodb://localhost:27018
 
 ---
@@ -90,11 +71,9 @@ mongodb://localhost:27018
 ## 6. Limpieza de base de datos (opcional pero recomendado)
 
 Antes de iniciar experimentos:
-
 python src\clear_db.py
 
 Esto elimina documentos en:
-
 runs
 partials
 
@@ -124,7 +103,6 @@ python src\contar_palabras.py --input data\el_quijote_100x.txt --workers 4 --tag
 ## 8. Verificación en MongoDB
 
 Abrir MongoDB Compass y conectar a:
-
 mongodb://localhost:27018
 
 Base de datos:
@@ -146,15 +124,13 @@ Ver parciales de un run concreto:
 
 Para cada ejecución se registra:
 
-Tiempo de ejecución
-Número de palabras únicas
-Top 10 palabras más frecuentes
-Número de procesos utilizados
+1.- Tiempo de ejecución
+2.- Número de palabras únicas
+3.- Top 10 palabras más frecuentes
+4.- Número de procesos utilizados
 
 Se calculan posteriormente:
-
-Speedup
-Eficiencia paralela
+Speedup y Eficiencia paralela
 
 ---
 
