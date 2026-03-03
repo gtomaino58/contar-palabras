@@ -1,0 +1,35 @@
+# Entorno virtual
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Mongo data (si en algún momento se usa volumen local)
+mongo_data/
+
+# Archivos temporales
+*.tmp
+*.bak
+
+# Reports generados
+reports/results/*
+reports/figures/*
+
+# Tests cache
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
