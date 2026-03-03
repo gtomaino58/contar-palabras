@@ -35,10 +35,10 @@ El objetivo es analizar el impacto del paralelismo en función del tamaño del p
 
 ## 3. Estructura del proyecto
 
-contar-palabras / docker-compose.yml, requirements.txt, README.md
-data / el_quijote.txt
-src / contar_palabras.py, parallel_count.py, text_cleaning.py, mongo_store.py, clear_db.py
-scripts / make_quijote_100x.ps1
+contar-palabras / docker-compose.yml, requirements.txt, README.md; 
+data / el_quijote.txt; 
+src / contar_palabras.py, parallel_count.py, text_cleaning.py, mongo_store.py, clear_db.py; 
+scripts / make_quijote_100x.ps1; 
 reports / 
 
 ---
